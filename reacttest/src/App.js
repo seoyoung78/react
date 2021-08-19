@@ -17,6 +17,7 @@ function App() {
 
   const handleChange = (event) => {
     setMemberId(6);
+    setKeyword(event.target.value);
     const newMemberList = [];
     if (event.target.value === "") {
       setMembersList(data);
