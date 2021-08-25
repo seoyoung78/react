@@ -23,6 +23,9 @@ function SearchBox() {
     }
   };
 
+  console.log(id);
+  console.log(list);
+
   return (
     <div className="search-box">
       <input className="inp-sch" type="text" placeholder="검색어를 입력하세요." value={keyword} onChange={handleChange}></input>

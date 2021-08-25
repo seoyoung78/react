@@ -2,7 +2,8 @@ import { useRecoilState } from "recoil";
 import { memberListState, memberIdState, memberState } from "../atoms/contact";
 
 function MemberList() {
-  const [list, setlist] = useRecoilState(memberListState);
+  // const [list, setlist] = useRecoilState(memberListState);
+  const list = useRecoilState(memberListState)
   const [id, setId] = useRecoilState(memberIdState);
   const [detail, setDetail] = useRecoilState(memberState);
 
@@ -16,12 +17,13 @@ function MemberList() {
         email: mlist.email
       });
     }
+    console.log(detail);
   };
   
   return (
     <div className="contact-list">
       <ul>
-        {list.map((list => 
+        {list[0].map((list => 
           <li key={list.id}>
             <button type="button" onClick={() => handleClick(list)}>{list.name}</button>
           </li>))}
