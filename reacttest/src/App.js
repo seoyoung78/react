@@ -26,8 +26,8 @@ function App() {
           if(data[i].name.includes(event.target.value)) {
             newMemberList.push(data[i]);
         }
-        setMembersList(newMemberList);
       }
+      setMembersList(newMemberList);
     }    
   };
 
