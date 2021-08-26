@@ -1,12 +1,15 @@
-import { useRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import { memberListState, memberIdState, memberState } from "../atoms/contact";
 
 function MemberList() {
-  // const [list, setlist] = useRecoilState(memberListState);
+  // member 목록을 저장하는 변수
   const list = useRecoilState(memberListState)
+  // member의 id를 저장하는 변수
   const [id, setId] = useRecoilState(memberIdState);
-  const [detail, setDetail] = useRecoilState(memberState);
+  // 클릭한 member의 상세 내역을 저장하는 변수
+  const setDetail = useSetRecoilState(memberState);
 
+  // 클릭 시 member의 id와 detail 정의
   const handleClick = (mlist : any) => {
     if (id !== mlist.id) {
       setId(mlist.id);
@@ -18,7 +21,6 @@ function MemberList() {
         email: mlist.email
       });
     }
-    console.log(detail);
   };
   
   return (
