@@ -1,0 +1,10 @@
+{
+  "type": "postgres",
+  "host": "172.16.112.112",
+  "port": 5432,
+  "username": "postgres",
+  "password": "admin",
+  "database": "contact",
+  "entities": ["dist/**/*.entity{.ts,.js}", "dist/**/*{.ts,.js}"],
+  "synchronize": true
+}
