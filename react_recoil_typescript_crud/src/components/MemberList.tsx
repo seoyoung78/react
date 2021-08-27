@@ -1,6 +1,9 @@
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
-import { memberListState, memberIdState, memberState } from "../atoms/contact";
+import { memberListState, memberIdState, memberState, memberList } from "../atoms/contact";
 import { IMember } from "../types/imembers";
+import { IMember2 } from "../types/imember2"
+import { getContactList } from "../utils/api/ApiService";
+import { useEffect } from "react";
 
 function MemberList() {
   // member 목록을 저장하는 변수
@@ -23,7 +26,20 @@ function MemberList() {
       });
     }
   };
+
+  const [apiData, setApiData] = useRecoilState<IMember2[]>(memberList)
+
+  const select = async() => {
+    let result = await getContactList();
+    setApiData(result);
+    console.log(result);
+    return result;
+  }
   
+  useEffect(() => {
+    select();
+  }, [])
+
   return (
     <div className="contact-list">
       <ul>

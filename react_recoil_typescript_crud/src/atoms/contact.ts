@@ -1,6 +1,7 @@
 import { atom } from "recoil";
 import members from './members';
 import { IMember } from "../types/imembers";
+import { IMember2 } from "../types/imember2";
 
 // member 목록
 export const memberListState = atom<IMember[]>({
@@ -36,4 +37,10 @@ export const memberState = atom<IMember>({
     tel: '',
     email: ''
   }
+});
+
+// Member 정보 조회(Api)
+export const memberList = atom<IMember2[]> ({
+  key: 'memberList',
+  default: [],
 });
