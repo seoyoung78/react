@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Member 정보
-const MEMBER_API_URL = "http://localhost:4000/contact";
+const MEMBER_API_URL = "http://localhost:4000/contacts";
 
 /*********** Member 정보 API_URL *************/ 
 // Member 정보 조회
