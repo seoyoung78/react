@@ -1,15 +1,16 @@
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { memberListState, memberIdState, keywordState, memberState , searchListState} from "../atoms/contact";
+import { IMember } from "../types/imembers";
 
 function SearchBox() {
   // 검색 키워드 상테
-  const [keyword, setKeyword] = useRecoilState(keywordState);
+  const [keyword, setKeyword] = useRecoilState<string>(keywordState);
   // 검색 목록 상태
-  const members = useRecoilValue(searchListState);
+  const members = useRecoilValue<IMember[]>(searchListState);
   // 오른쪽 상세 및 추가 폼 변경을 위한 상태 setValue
-  const setId = useSetRecoilState(memberIdState);
+  const setId = useSetRecoilState<number>(memberIdState);
   // 검색 후 목록 상태 setValue
-  const setlist = useSetRecoilState(memberListState);
+  const setlist = useSetRecoilState<IMember[]>(memberListState);
   // 추가 시 member 상태 초기화를 위한 setValue
   const setMember : any = useSetRecoilState(memberState);
   

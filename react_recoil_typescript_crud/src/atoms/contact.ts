@@ -1,8 +1,9 @@
 import { atom } from "recoil";
 import members from './members';
+import { IMember } from "../types/imembers";
 
 // member 목록
-export const memberListState = atom<any[]>({
+export const memberListState = atom<IMember[]>({
   key: 'memberListState',
   default: members
 });
@@ -20,18 +21,18 @@ export const keywordState = atom<string>({
 });
 
 // 검색 목록
-export const searchListState = atom<any[]>({
+export const searchListState = atom<IMember[]>({
   key: 'searchListState',
   default: members
 });
 
 // 개별 member
-export const memberState = atom<{}>({
+export const memberState = atom<IMember>({
   key: 'memberState',
   default: {
     id: 0,
     name : '',
-    departmemt: '',
+    department: '',
     tel: '',
     email: ''
   }

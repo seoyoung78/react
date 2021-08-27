@@ -1,18 +1,19 @@
-import { useRecoilState, useSetRecoilState } from "recoil";
+import { useRecoilState, useResetRecoilState, useSetRecoilState } from "recoil";
 import { memberState, memberListState, memberIdState, keywordState, searchListState } from "../atoms/contact";
 import { addData, editData } from "../atoms/members";
+import { IMember } from "../types/imembers";
 
 function MemberForm () {
   // 데이터 목록 정의 및 수정을 위한 상태
-  const [list, setList] = useRecoilState(memberListState);
+  const [list, setList] = useRecoilState<IMember[]>(memberListState);
   // 추가 혹은 수정된 member의 정보를 저장하기 위한 상태
-  const [member, setMember] : any = useRecoilState(memberState);
+  const [member, setMember] = useRecoilState<IMember>(memberState);
   // 추가 혹은 수정 확인을 위한 상태
-  const [id, setId] = useRecoilState(memberIdState);
-  // 검색어 상태 setValue
-  const setkeyword = useSetRecoilState(keywordState);
+  const [id, setId] = useRecoilState<number>(memberIdState);
   // 검색할 목록 상태 setValue
-  const setSlist = useSetRecoilState(searchListState);
+  const setSlist = useSetRecoilState<IMember[]>(searchListState);
+  // 검색어 상태 초기화 함수
+  const resetkeyword = useResetRecoilState(keywordState);
 
   // 변경되는 값 저장
   const handleChange = (event : any) => {
@@ -52,7 +53,7 @@ function MemberForm () {
     // 검색할 목록 재정의
     setSlist(tempList);
     // 검색어 초기화
-    setkeyword('');
+    resetkeyword();
   }
 
   return (
