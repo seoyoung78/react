@@ -39,7 +39,7 @@ function MemberList() {
   
   useEffect(() => {
     select();
-  })
+  }, [])
 
   return (
     <div className="contact-list">
