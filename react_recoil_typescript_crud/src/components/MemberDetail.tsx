@@ -1,8 +1,9 @@
 import { useRecoilState, useRecoilValue, useResetRecoilState, useSetRecoilState } from "recoil";
-import { memberListState, memberIdState, memberState, keywordState, searchListState, memberList, memberDetail, searchList } from "../atoms/contact";
+import { memberIdState, keywordState, memberList, memberDetail } from "../atoms/contact";
+// import { memberListState, memberIdState, memberState, keywordState, searchListState} from "../atoms/contact";
 import MemberForm from "./MemberForm";
-import { deleteData } from "../atoms/members";
-import { IMember } from "../types/imembers";
+// import { deleteData } from "../atoms/members";
+// import { IMember } from "../types/imembers";
 import { IMember2 } from "../types/imember2";
 import { deleteContact, getContactList } from "../utils/api/ApiService";
 
@@ -19,7 +20,6 @@ function MemberDetail() {
   const resetKeyword = useResetRecoilState(keywordState);
   // 검색 목록 상태
   // const setSearchLsit = useSetRecoilState<IMember[]>(searchListState);
-  const setSearchLsit = useSetRecoilState<IMember2[]>(searchList);
 
   // 삭제 버튼 클릭 시
   const handleDelete = async (member : IMember2) => {

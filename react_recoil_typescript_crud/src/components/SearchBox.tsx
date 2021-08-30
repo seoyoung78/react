@@ -1,6 +1,7 @@
-import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
-import { memberListState, memberIdState, keywordState, memberState , searchListState, memberList, searchList, memberDetail} from "../atoms/contact";
-import { IMember } from "../types/imembers";
+import { useRecoilState, useSetRecoilState } from "recoil";
+import { memberIdState, keywordState, memberList, memberDetail} from "../atoms/contact";
+// import { memberListState, memberIdState, keywordState, memberState , searchListState} from "../atoms/contact";
+// import { IMember } from "../types/imembers";
 import { IMember2 } from "../types/imember2";
 import { getContactList, getSeacrchList } from "../utils/api/ApiService";
 

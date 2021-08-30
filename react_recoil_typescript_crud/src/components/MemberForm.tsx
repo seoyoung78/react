@@ -1,7 +1,8 @@
-import { useRecoilState, useResetRecoilState, useSetRecoilState } from "recoil";
-import { memberState, memberListState, memberIdState, keywordState, searchListState, memberList, memberDetail, searchList } from "../atoms/contact";
-import { addData, editData } from "../atoms/members";
-import { IMember } from "../types/imembers";
+import { useRecoilState, useResetRecoilState } from "recoil";
+import { memberIdState, keywordState, memberList, memberDetail } from "../atoms/contact";
+// import { memberState, memberListState, keywordState, searchListState } from "../atoms/contact";
+// import { addData, editData } from "../atoms/members";
+// import { IMember } from "../types/imembers";
 import { IMember2 } from "../types/imember2";
 import { addContact, getContactList, updateContact } from "../utils/api/ApiService";
 
@@ -16,7 +17,6 @@ function MemberForm () {
   const [id, setId] = useRecoilState<number>(memberIdState);
   // 검색할 목록 상태 setValue
   // const setSlist = useSetRecoilState<IMember[]>(searchListState);
-  const setSlist = useSetRecoilState<IMember2[]>(searchList);
   // 검색어 상태 초기화 함수
   const resetkeyword = useResetRecoilState(keywordState);
 
@@ -31,7 +31,7 @@ function MemberForm () {
   // 저장 버튼 클릭 시
   const handleClick = async () => {
     // 임의 배열
-    let tempList : any;
+    // let tempList : any;
     let result : any;
 
     // 추가 버튼 클릭 했을 경우

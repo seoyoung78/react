@@ -1,6 +1,7 @@
-import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
-import { memberListState, memberIdState, memberState, memberList, memberDetail } from "../atoms/contact";
-import { IMember } from "../types/imembers";
+import { useRecoilState, useSetRecoilState } from "recoil";
+import { memberIdState, memberList, memberDetail } from "../atoms/contact";
+// import { memberListState, memberIdState, memberState } from "../atoms/contact";
+// import { IMember } from "../types/imembers";
 import { IMember2 } from "../types/imember2"
 import { getContactList } from "../utils/api/ApiService";
 import { useEffect } from "react";
