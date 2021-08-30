@@ -39,8 +39,40 @@ export const memberState = atom<IMember>({
   }
 });
 
+/********************************* API **************************************/ 
+
 // Member 정보 조회(Api)
 export const memberList = atom<IMember2[]> ({
   key: 'memberList',
   default: [],
+});
+
+// Membaer 상세 정보 저장
+export const memberDetail = atom<IMember2> ({
+  key: 'memberDetail',
+  default: {
+    id: 0,
+    name: '',
+    deptName: '',
+    phone: '',
+    mail: ''
+  }
+});
+
+// Member의 아이디 + 화면 전환을 위한 상태 저장
+// export const idState = atom<number> ({
+//   key: 'idState',
+//   default: 0
+// });
+
+// // 검색어 저장
+// export const searchState = atom<string> ({
+//   key: 'searchState',
+//   default: ''
+// });
+
+// 검색 목록 저장 상태
+export const searchList = atom<IMember2[]> ({
+  key: 'searchList',
+  default: []
 });
