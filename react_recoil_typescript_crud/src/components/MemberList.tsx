@@ -21,7 +21,7 @@ function MemberList() {
     let result = await getContactList();
     setApiData(result);
     return result;
-  }
+  };
 
   // 클릭 시 member의 id와 detail 정의
   const handleClick = (mlist : IMember2) => {
